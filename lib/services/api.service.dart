@@ -25,7 +25,6 @@ class APIService {
 
       final response = await _dio.get(
           uri
-
       );
 
       if (response.statusCode == 200) {

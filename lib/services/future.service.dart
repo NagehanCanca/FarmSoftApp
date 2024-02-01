@@ -18,12 +18,13 @@ class FutureService extends IFutureService {
 
   @override
   Future<List<T>> get<T>(String path) async {
-    final response = await _getDioRequest(path);
-    if (response is List) {
-      return response.map((e) => T.fromJson(e)).toList();
-    } else {
-      throw response;
-    }
+    // final response = await _getDioRequest(path);
+    // if (response is List) {
+    //   return response.map((e) => T.fromJson(e)).toList();
+    // } else {
+    //   throw response;
+    // }
+    throw UnimplementedError();
   }
 
   @override
