@@ -46,6 +46,7 @@ dependencies:
   flutter_mobx: ^2.2.0+2
   build_runner: ^2.4.8
   easy_localization: ^3.0.3
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

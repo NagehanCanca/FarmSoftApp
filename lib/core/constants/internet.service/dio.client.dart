@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:farm_soft/core/constants/intenet.service/paths.dart';
+import 'package:farm_soft/core/constants/internet.service/paths.dart';
 
 class DioClient {
   DioClient._();
@@ -7,13 +7,15 @@ class DioClient {
   static final instance = DioClient._();
 
   final Dio _dio = Dio(
-      BaseOptions(
-          baseUrl: baseUrl,
-          headers: {"x-api-key" :"emre"} ,
-          connectTimeout: const Duration(seconds: 60),
-          receiveTimeout: const Duration(seconds: 60),
-          responseType: ResponseType.json
-      )
+    BaseOptions(
+      baseUrl: baseUrl,
+      headers: {
+        "X-Api-Key": "emre",
+      },
+      connectTimeout: const Duration(seconds: 60),
+      receiveTimeout: const Duration(seconds: 60),
+      responseType: ResponseType.json,
+    ),
   );
 
   ///Get Method
