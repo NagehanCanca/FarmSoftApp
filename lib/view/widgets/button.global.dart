@@ -4,7 +4,7 @@ import 'package:farm_soft/services/user.service.dart';
 import 'package:farm_soft/utils/global.colors.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../models/user.dart';
+import '../../models/user.model.dart';
 
 
 class ButtonGlobal extends StatelessWidget {
@@ -12,7 +12,7 @@ class ButtonGlobal extends StatelessWidget {
 
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  late User user;
+  late UserModel user;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -49,7 +49,7 @@ class ButtonGlobal extends StatelessWidget {
       usernameController.text,
       passwordController.text,
     );
-    if (user is User) {
+    if (user is UserModel) {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString("loggedUser", json.encode(user.toJson()));
 
@@ -57,7 +57,7 @@ class ButtonGlobal extends StatelessWidget {
       var usersad = prefs2.getString("loggedUser");
 
       if (usersad is String) {
-        User asda = User.fromJson(jsonDecode(usersad));
+        UserModel asda = UserModel.fromJson(jsonDecode(usersad));
       }
 
       Navigator.pushReplacementNamed(context, '/anasayfa');

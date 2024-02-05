@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 
 import '../core/constants/internet.service/dio.client.dart';
-import '../models/user.dart';
+import '../models/user.model.dart';
 
 class UserService {
   final DioClient _dioClient = DioClient.instance;
 
 
-  Future<User> login(String username, String password) async {
+  Future<UserModel> login(String username, String password) async {
     try {
       final response = await _dioClient.post(
         '/User',
@@ -17,7 +17,7 @@ class UserService {
         },
       );
 
-      final user = User.fromJson(response);
+      final user = UserModel.fromJson(response);
       return user;
       //final userList = (response["data"] as List).map((e) => User.fromJson(e)).toList();
       //return userList;

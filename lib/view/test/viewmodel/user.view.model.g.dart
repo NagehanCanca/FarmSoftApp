@@ -1,16 +1,16 @@
-// test.view.model.g.dart
+// user.view.model.g.dart
 
 // Bu dosya MobX tarafından otomatik olarak oluşturuldu.
 // Lütfen manuel olarak değiştirmeyin.
 
-part of 'test.view.model.dart';
+part of 'user.view.model.dart';
 
 // **************************************************************************
 // StoreGenerator
 // **************************************************************************
 
-mixin _$TestViewModel on _TestViewModelBase, Store {
-  final _$numberAtom = Atom(name: '_TestViewModelBase.number');
+mixin _$UserViewModel on _UserViewModelBase, Store {
+  final _$numberAtom = Atom(name: '_UserViewModelBase.number');
 
   @override
   int get number {
@@ -25,17 +25,17 @@ mixin _$TestViewModel on _TestViewModelBase, Store {
     });
   }
 
-  final _$_TestViewModelBaseActionController =
-  ActionController(name: '_TestViewModelBase');
+  final _$_UserViewModelBaseActionController =
+  ActionController(name: '_UserViewModelBase');
 
   @override
   void incrementNumber() {
-    final _$actionInfo = _$_TestViewModelBaseActionController.startAction(
-        name: '_TestViewModelBase.incrementNumber');
+    final _$actionInfo = _$_UserViewModelBaseActionController.startAction(
+        name: '_UserViewModelBase.incrementNumber');
     try {
       return super.incrementNumber();
     } finally {
-      _$_TestViewModelBaseActionController.endAction(_$actionInfo);
+      _$_UserViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 

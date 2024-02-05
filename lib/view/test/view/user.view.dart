@@ -1,5 +1,7 @@
 import 'package:farm_soft/core/base/view/base.widget.dart';
-import 'package:farm_soft/view/test/viewmodel/test.view.model.dart';
+import 'package:farm_soft/core/constants/enum/locale.keys.enum.dart';
+import 'package:farm_soft/core/init/cache/local.manager.dart';
+import 'package:farm_soft/view/test/viewmodel/user.view.model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import '../../../core/base/state/base.state.dart';
@@ -8,15 +10,15 @@ class TestView extends StatefulWidget {
   const TestView({super.key});
 
   @override
-  State<TestView> createState() => _TestViewState();
+  State<TestView> createState() => _UserViewState();
 }
 
-class _TestViewState extends BaseState<TestView> {
-  late TestViewModel viewModel;
+class _UserViewState extends BaseState<TestView> {
+  late UserViewModel viewModel;
   @override
   Widget build(BuildContext context) {
-    return BaseView<TestViewModel>(
-        viewModel: TestViewModel(),
+    return BaseView<UserViewModel>(
+        viewModel: UserViewModel(),
         onPageBuilder: (context, value) => Text("data"),
       onModelReady: (model) {
           viewModel = model;
@@ -26,6 +28,11 @@ class _TestViewState extends BaseState<TestView> {
     );
   }
   Widget get scaffoldBody => Scaffold(
+    appBar: AppBar(
+      leading: Text(
+        LocaleManager.instance.getStringValue(PreferencesKeys.TOKEN)
+      ),
+    ),
     floatingActionButton: floatingActionButtonNumberIncrement,
       body: textNumber,
   );

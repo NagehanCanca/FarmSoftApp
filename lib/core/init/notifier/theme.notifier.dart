@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../constants/enum/app.theme.enum.dart';
 
 class ThemeNotifier extends ChangeNotifier {

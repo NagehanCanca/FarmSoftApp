@@ -47,6 +47,8 @@ dependencies:
   build_runner: ^2.4.8
   easy_localization: ^3.0.3
   shared_preferences: ^2.2.2
+  provider: ^6.1.1
+  vexana: ^3.5.4
 
 dev_dependencies:
   flutter_test:

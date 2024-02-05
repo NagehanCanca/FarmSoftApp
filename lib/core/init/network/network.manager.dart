@@ -1,4 +1,8 @@
 import 'package:dio/dio.dart';
+import '../../constants/enum/locale.keys.enum.dart';
+import '../cache/local.manager.dart';
+import 'ICoreDio.dart';
+import 'core.dio.dart';
 
 class NetworkManager {
   NetworkManager._init() {
