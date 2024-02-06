@@ -1,18 +1,22 @@
-import 'package:farm_soft/core/init/network/network.manager.dart';
-import 'package:farm_soft/core/init/notifier/theme.notifier.dart';
-import 'package:farm_soft/models/user.model.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
+
 import '../../../core/base/model/base.view.model.dart';
 import '../../../core/constants/enum/app.theme.enum.dart';
+import '../../../core/constants/enum/http.request.enum.dart';
+import '../../../core/init/network/IResponseModel.dart';
+import '../../../core/init/notifier/theme.notifier.dart';
+import '../../../models/user.model.dart';
 
 part 'user.view.model.g.dart';
 
 class UserViewModel = _UserViewModelBase with _$UserViewModel;
 
-abstract class _UserViewModelBase with Store, BaseViewModel {
-  void setContext(BuildContext context) => this.context = context;
+abstract class _UserViewModelBase extends BaseViewModel with Store {
+  void setContext(BuildContext context) => viewModelContext = context;
   void init () {}
 
   @observable
@@ -27,9 +31,16 @@ abstract class _UserViewModelBase with Store, BaseViewModel {
         .changeValue(AppThemes.DARK);
   }
 
-  void getSnmpleRequest() async {
+  Future<void> getSampleRequest() async {
     var isLoading = true;
-    await NetworkManager.instance.dioGet<UserModel>("x", UserModel());
+
+      final response = await coreDio?.send<List<UserModel>, UserModel>("x",
+          type: HttpTypes.GET,parseModel: UserModel());
+      if (response?.data is List<UserModel>){
+
+      } else{
+        response?.error;
+      }
     isLoading = false;
   }
 }

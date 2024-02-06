@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import '../../../core/base/state/base.state.dart';
 
-class TestView extends StatefulWidget {
-  const TestView({super.key});
+class UserView extends StatefulWidget {
+  const UserView({super.key});
 
   @override
-  State<TestView> createState() => _UserViewState();
+  State<UserView> createState() => _UserViewState();
 }
 
-class _UserViewState extends BaseState<TestView> {
+class _UserViewState extends BaseState<UserView> {
   late UserViewModel viewModel;
   @override
   Widget build(BuildContext context) {

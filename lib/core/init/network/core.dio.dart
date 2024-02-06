@@ -8,6 +8,7 @@ import '../../constants/enum/http.request.enum.dart';
 import 'ICoreDio.dart';
 import 'IResponseModel.dart';
 
+
 class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
   CoreDio(this.options) {
     options = options;
@@ -18,10 +19,10 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
   final BaseOptions options;
 
   @override
-  Future<IResponseModel<R>> send<R, T>(
+  Future<IResponseModel<R>> send<R, T extends BaseModel>(
       String path, {
         required HttpTypes type,
-        required BaseModel<T> parseModel,
+        required T parseModel,
         dynamic data,
         Map<String, dynamic>? queryParameters,
         void Function(int, int)? onReceiveProgress,
@@ -36,10 +37,10 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
     switch (response.statusCode) {
       case HttpStatus.ok:
       case HttpStatus.accepted:
-        final model = _responseParser<R, T>(parseModel, response.data);
-        return ResponseModel<R>(data: model);
+        //final model = _responseParser<R, T>(parseModel, response.data);
+        //return ResponseModel<R>(data: model);
       default:
-        return ResponseModel(error: BaseError('message'));
+        return ResponseModel(error: BaseError('aaa'));
     }
   }
 }
