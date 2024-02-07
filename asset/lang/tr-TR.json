@@ -1,0 +1,11 @@
+{
+  "login": {
+    "tab1": "Login",
+    "tab2": "SignUp",
+    "username": "Username",
+    "password": "Password",
+    "forgotText": "Forgot Password",
+    "login": "Login",
+    "dontAccount": "Dont have account"
+  }
+}

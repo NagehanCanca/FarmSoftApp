@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 main() {
   setUp(() {});
-  test("Email Regexp", () {
+  test("Username Regexp", () {
     String email = "asd.com";
-    expect(email.isValidEmail, null);
+    expect(email.isValidUsername, null);
   });
 }

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
@@ -7,7 +5,6 @@ import 'package:provider/provider.dart';
 import '../../../core/base/model/base.view.model.dart';
 import '../../../core/constants/enum/app.theme.enum.dart';
 import '../../../core/constants/enum/http.request.enum.dart';
-import '../../../core/init/network/IResponseModel.dart';
 import '../../../core/init/notifier/theme.notifier.dart';
 import '../../../models/user.model.dart';
 

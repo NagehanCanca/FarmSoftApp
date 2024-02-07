@@ -5,9 +5,9 @@ import '../constants/app.constants.dart';
 extension StringLocalization on String {
   String get locale => this.tr();
 
-  String? get isValidEmail => contains(RegExp(ApplicationConstants.EMAIL_REGIEX)) ? null : 'Email does not valid';
+  String? get isValidUsername => contains(RegExp(ApplicationConstants.USERNAME_REGEX)) ? null : 'Email does not valid';
 
-  bool get isValidEmails => RegExp(ApplicationConstants.EMAIL_REGIEX).hasMatch(this);
+  bool get isValidUsernames => RegExp(ApplicationConstants.USERNAME_REGEX).hasMatch(this);
 }
 
 extension ImagePathExtension on String {
