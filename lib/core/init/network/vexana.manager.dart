@@ -1,7 +1,8 @@
 import 'dart:io';
 import 'package:vexana/vexana.dart';
+import '../../../models/error.model.dart';
+import '../../base/model/base.error.dart';
 
-import '../../base/model/response.error.dart';
 
 class VexanaManager {
 
@@ -13,7 +14,7 @@ class VexanaManager {
     return _instace!;
   }
 
-  INetworkManager networkManager =
-  NetworkManager<UserErrorModel>(isEnableLogger: true, errorModel: UserErrorModel(), options: BaseOptions(baseUrl: 'http://88.225.235.235:8081/api'));
+  NetworkManager networkManager =
+  NetworkManager<BasicErrorModel>(isEnableLogger: true, errorModel: BasicErrorModel(), options: BaseOptions(baseUrl: 'http://88.225.235.235:8081/api/', headers:{ "X-Api-Key": "emre"}));
 
 }

@@ -1,9 +1,10 @@
+import 'package:farm_soft/view/start.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mobx/mobx.dart';
 import '../../../core/base/model/base.view.model.dart';
 import '../../../core/constants/enum/locale.keys.enum.dart';
 import '../../../core/init/network/vexana.manager.dart';
-import '../model/login.model.dart';
 import '../service/ILoginService.dart';
 import '../service/login.service.dart';
 
@@ -38,29 +39,32 @@ abstract class _LoginViewModelBase extends BaseViewModel with Store {
   Future<void> fetchLoginService() async {
     isLoadingChange();
     if (formState.currentState!.validate()) {
-      final response = await loginService.fetchUserControl(
-        LoginModel(
-          username: usernameController.text,
-          password: passwordController.text,
-        ),
+      final response = await loginService.login(usernameController.text,passwordController.text,
       );
-
+      isLoadingChange();
       if (response != null) {
-        if (response.token?.isEmpty ?? true) return;
         if (scaffoldState.currentContext != null) {
           ScaffoldMessenger.of(scaffoldState.currentContext!).showSnackBar(
-            SnackBar(
-              content: Text(response.token!),
+            const SnackBar(
+              content: Text('Giriş yapıldı.'),
             ),
           );
         }
-        await localeManager.setStringValue(
-          PreferencesKeys.TOKEN,
-          response.token!,
-        );
+
+        Get.to(() => StartPage());
+       /// sayfa yönlendirmesi
+        ///
+      }
+      else {
+        if (scaffoldState.currentContext != null) {
+          ScaffoldMessenger.of(scaffoldState.currentContext!).showSnackBar(
+            const SnackBar(
+              content: Text('Giriş hatası.'),
+            ),
+          );
+        }
       }
     }
-    isLoadingChange();
   }
 
   void dispose() {

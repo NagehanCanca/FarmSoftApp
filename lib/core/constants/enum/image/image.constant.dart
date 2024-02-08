@@ -1,9 +1,8 @@
 class ImageConstants {
-
   ImageConstants._init();
-  static ImageConstants? _instace;
+  static ImageConstants? _instance;
 
-  static ImageConstants get instance => _instace ??= ImageConstants._init();
+  static ImageConstants get instance => _instance ??= ImageConstants._init();
 
   String get logo => toPng('Loya');
 

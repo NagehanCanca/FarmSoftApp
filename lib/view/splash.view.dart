@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:farm_soft/view/test/view/user.view.dart';
+import 'package:farm_soft/view/login/view/login.view.dart';
 import 'package:get/get.dart';
 import 'package:farm_soft/utils/global.colors.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 2), () {
-      Get.to(() => UserView());
+      Get.to(() => LoginView());
     });
 
 

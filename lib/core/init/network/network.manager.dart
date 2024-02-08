@@ -9,7 +9,9 @@ class NetworkManager<T extends INetworkModel<dynamic>> {
   NetworkManager._init() {
     final baseOptions = BaseOptions(
       baseUrl: 'http://88.225.235.235:8081/api',
-      headers: {'/User': LocaleManager.instance.getStringValue(PreferencesKeys.TOKEN)},
+        headers: {
+         "X-Api-Key": "emre",
+      },
     );
 
     coreDio = CoreDio(baseOptions);

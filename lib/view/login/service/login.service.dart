@@ -1,7 +1,9 @@
+import 'package:farm_soft/models/error.model.dart';
 import 'package:vexana/vexana.dart';
 
+import '../../../core/base/model/base.error.dart';
+import '../../../models/user.model.dart';
 import '../../product/enum/network.route.enum.dart';
-import '../model/login.model.dart';
 import '../model/login.response.model.dart';
 import 'ILoginService.dart';
 
@@ -9,18 +11,16 @@ class LoginService extends ILoginService {
   LoginService(INetworkManager manager) : super(manager);
 
   @override
-  Future<LoginResponseModel?> fetchUserControl(LoginModel model) async {
-    final response = await manager.send<LoginResponseModel, LoginResponseModel>(
-      NetworkRoutes.LOGIN.rawValue,
+  Future<IResponseModel<LoginResponseModel?,BasicErrorModel?>> login(String username, String password) async {
+    final  response = await manager.send(
+      '${NetworkRoutes.LOGIN.rawValue}?username=${username}&password=${password}',
       parseModel: LoginResponseModel(),
       method: RequestType.POST,
-      data: model,
     );
+      if(response.data is LoginResponseModel) {
+        return response.data;
+      }
+        return response.data;
 
-    if (response.data is LoginResponseModel) {
-      return response.data;
-    } else {
-      return null;
-    }
   }
 }

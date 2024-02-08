@@ -5,9 +5,11 @@ import '../../../core/base/view/base.widget.dart';
 import '../../../core/constants/enum/image/image.constant.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import '../../../core/init/lang/locale.keys.g.dart';
+import '../../../models/user.model.dart';
 import '../viewmodel/login.view.model.dart';
 
 class LoginView extends StatelessWidget {
+  late final UserModel _loggedUser;
   @override
   Widget build(BuildContext context) {
     return BaseView<LoginViewModel>(

@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:farm_soft/core/init/cache/local.manager.dart';
 import 'package:farm_soft/view/login/view/login.view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'core/constants/app.constants.dart';

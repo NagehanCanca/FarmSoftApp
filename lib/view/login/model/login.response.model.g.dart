@@ -8,11 +8,13 @@ part of 'login.response.model.dart';
 
 LoginResponseModel _$LoginResponseModelFromJson(Map<String, dynamic> json) {
   return LoginResponseModel(
-    token: json['token'] as String?,
+    lastName: json['lastname'] as String?,
+    firstName: json['firstname'] as String?,
   );
 }
 
 Map<String, dynamic> _$LoginResponseModelToJson(LoginResponseModel instance) =>
     <String, dynamic>{
-      'token': instance.token,
+      'lastname': instance.lastName,
+      'firstname': instance.firstName
     };
