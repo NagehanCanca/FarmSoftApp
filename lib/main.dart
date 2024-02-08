@@ -9,6 +9,7 @@ import 'core/init/lang/language.manager.dart';
 import 'core/init/navigation/navigation.route.dart';
 import 'core/init/navigation/navigation.service.dart';
 import 'core/init/notifier/provider.list.dart';
+import 'package:farm_soft/view/start.dart';
 
 void main() {
   LocaleManager.prefrencesInit();
@@ -35,7 +36,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: LoginView(),
+      home: StartPage(),
       navigatorKey: NavigationService.instance.navigatorKey,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
