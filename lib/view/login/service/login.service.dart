@@ -1,8 +1,5 @@
 import 'package:farm_soft/models/error.model.dart';
 import 'package:vexana/vexana.dart';
-
-import '../../../core/base/model/base.error.dart';
-import '../../../models/user.model.dart';
 import '../../product/enum/network.route.enum.dart';
 import '../model/login.response.model.dart';
 import 'ILoginService.dart';

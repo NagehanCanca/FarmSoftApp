@@ -6,5 +6,5 @@ class ImageConstants {
 
   String get logo => toPng('Loya');
 
-  String toPng(String name) => 'asset/image/$name.png';
+  String toPng(String name) => 'asset/images/$name.png';
 }

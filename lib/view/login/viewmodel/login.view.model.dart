@@ -1,9 +1,8 @@
-import 'package:farm_soft/view/start.dart';
+import 'package:farm_soft/view/startpage/start.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobx/mobx.dart';
 import '../../../core/base/model/base.view.model.dart';
-import '../../../core/constants/enum/locale.keys.enum.dart';
 import '../../../core/init/network/vexana.manager.dart';
 import '../service/ILoginService.dart';
 import '../service/login.service.dart';
@@ -51,9 +50,8 @@ abstract class _LoginViewModelBase extends BaseViewModel with Store {
           );
         }
 
-        Get.to(() => StartPage());
+        Get.to(() => const StartPage(isLoggedIn: true));
        /// sayfa yönlendirmesi
-        ///
       }
       else {
         if (scaffoldState.currentContext != null) {
